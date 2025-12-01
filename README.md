@@ -1,56 +1,94 @@
-# Retenção 5D - Aplicativo de Pesquisa de CPF
-
-**Retenção 5D** é um aplicativo desenvolvido para realizar pesquisas de CPF e fornecer ofertas personalizadas com base no `fx_score` do cliente. Além disso, o app agora inclui funcionalidades aprimoradas para **atualizar a base de dados** diretamente dentro da aplicação e **carregar os dados de maneira otimizada**, proporcionando uma experiência mais rápida e eficiente.
-
-## 🆕 **Novidades**
-### **Funcionalidades adicionadas:**
-
-1. **Otimização na Abertura do Aplicativo**:
-   - O tempo de carregamento foi otimizado, tornando a abertura do aplicativo muito mais rápida.
-   - A busca de CPF e o carregamento dos dados agora são mais eficientes, proporcionando uma experiência melhor para o usuário.
-
-2. **Melhoria na Lógica de Busca de CPF**:
-   - A busca foi otimizada para garantir **respostas mais rápidas** e **confiáveis**.
-   - Caso o CPF não seja encontrado ou se o banco de dados não estiver carregado corretamente, a interface agora fornece mensagens claras de erro.
-
-3. **Aparência Melhorada**:
-   - A interface foi aprimorada com cores mais modernas e agradáveis.
-   - O botão de atualização é agora ativado por um código secreto, aumentando a segurança e controle no uso.
-  
-4. **Desconto farmácia**:
-   - Agora é exibido a utilização Total e dos últimos 3 meses do cliente
-  
-5. **Intigência Aprimorada**:
-   - Caso o cliente tenha mais de duas contas, sempre será exibido a melhor conta do clinte
+# 📌 Retenção 5D — Aplicativo de Pesquisa de CPF  
+Aplicativo desktop desenvolvido em **Python + PySide6** para realizar consultas de CPF, analisar ofertas personalizadas com base no `fx_score` e exibir informações relevantes do cliente.  
+Inclui sistema de atualização de base, carregamento otimizado e interface aprimorada.
 
 ---
 
-### ⚙️ Como funciona o banco de dados?
--O banco de dados é carregado no formato Parquet, o que permite uma leitura mais rápida e eficiente. Caso o arquivo dados.parquet não esteja disponível ou precise ser atualizado, o aplicativo permite importar dados de um arquivo Excel para gerar o banco de dados novamente.
+# ✨ Principais Funcionalidades
+
+## 🔍 Pesquisa Inteligente de CPF
+- Busca otimizada e responsiva  
+- Filtragem automática para exibir **sempre a melhor conta** quando o cliente possui múltiplas  
+- Mensagens claras para CPF inválido, inexistente ou base não carregada  
+
+## ⚡ Carregamento Rápido & Otimizado
+- Utiliza arquivo **Parquet** para leitura rápida  
+- Otimização interna que reduziu significativamente o tempo de inicialização  
+
+## 📊 Informações Detalhadas do Cliente
+- Exibe desconto de farmácia  
+- Mostra uso **total** e dos **últimos 3 meses**  
+- Seleção automática da melhor conta disponível  
+
+## 🔄 Atualização da Base (Modo restrito)
+- Importação de novo arquivo Excel direto no app  
+- Conversão automática para `dados.parquet`  
+- Botão protegido por **código secreto** para evitar alterações indevidas  
 
 ---
 
-### 🚀 Tecnologias Utilizadas
-PySide6: Para a interface gráfica do usuário (GUI).
-Pandas: Para manipulação de dados e leitura/escrita do arquivo Parquet.
-Excel (XLSX): Formato de arquivo usado para importar dados atualizados.
+# 🆕 Novidades Recentes
+
+- Interface com cores mais modernas e agradáveis  
+- Carregamento otimizado de dados  
+- Lógica de busca revisada e mais precisa  
+- Seleção inteligente da melhor conta ao cliente  
+- Mensagens de erro e uso mais claras  
 
 ---
 
-### 🐞 Problemas conhecidos
-- A primeira vez que você abrir o aplicativo e não tiver um arquivo dados.parquet, ele tentará carregar um banco de dados vazio. Certifique-se de rodar a atualização da base de dados se necessário.
+# 🗄️ Como funciona o banco de dados?
+
+- O app utiliza **Parquet** como formato principal (rápido e leve)  
+- Se não existir um `dados.parquet`:
+  - O app cria uma base vazia  
+  - Permite atualizar os dados via Excel  
+- Pandas faz toda a manipulação, filtragem e geração da base  
 
 ---
 
-### 🤝 Contribuindo
-- Contribuições são bem-vindas! Se você tiver melhorias, correções de bugs ou novas funcionalidades, sinta-se à vontade para abrir uma issue ou enviar um pull request.
+# 🛠️ Tecnologias Utilizadas
+
+- **Python 3.x**  
+- **PySide6** — Interface gráfica (GUI)  
+- **Pandas** — Manipulação de dados  
+- **Parquet / Excel (XLSX)** — Fonte de dados  
 
 ---
 
-### 📃 Licença
-- Este projeto está licenciado sob a MIT License - veja o arquivo LICENSE para mais detalhes.
+# ▶️ Como Executar o Projeto
+
+```bash
+git clone https://github.com/JoaoGRSilva/Consulta_Parket
+cd nome-do-projeto
+
+pip install -r requirements.txt
+python main.py
+```
+Caso não haja um arquivo dados.parquet, utilize a opção de atualizar a base via Excel.
 
 ---
 
-### 👨‍💻 Autoria
-- Desenvolvido por João Gabriel.
+# 🐞 Problemas Conhecidos
+
+- Na primeira execução sem o arquivo dados.parquet, o app abrirá com a base vazia.
+- É recomendado carregar um arquivo Excel através do menu de atualização.
+
+---
+
+# 🤝 Contribuições
+
+Contribuições são bem-vindas!
+Use issues para relatar bugs ou sugerir melhorias ou abra um pull request diretamente.
+
+---
+
+# 📄 Licença
+
+Este projeto é licenciado sob a MIT License.
+
+---
+
+# 👨‍💻 Autor
+
+Desenvolvido por João Gabriel Silva.
